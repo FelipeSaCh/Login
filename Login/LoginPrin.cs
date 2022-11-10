@@ -42,14 +42,14 @@ namespace Login
             else
             {
                 conectar.Open();
-                string seleccionar = "SELECT * FROM loginform.userinfo WHERE Usuario = '" + txtUsername.Text + "' AND Contraseña = '" + txtPassword.Text + "';";
+                string seleccionar = "SELECT * FROM login.user WHERE UserN = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "';";
                 comando = new MySqlCommand(seleccionar, conectar);
                 mdr = comando.ExecuteReader();
 
                 if (mdr.Read())
                 {
                     string conexion = "datasource=localhost;port=3306;username=root;password=";
-                    string Query = "update loginform.userinfo set UltimaConexion='" + dtp.Value + "' where usuario='" + this.txtUsername.Text + "';";
+                    string Query = "update login.user set LastL='" + dtp.Value + "' where UserN='" + this.txtUsername.Text + "';";
                     MySqlConnection conect2 = new MySqlConnection(conexion);
 
                     MySqlCommand comm2 = new MySqlCommand(Query, conect2);
@@ -78,9 +78,44 @@ namespace Login
 
         private void btncreate_Click(object sender, EventArgs e)
         {
-            Register reg = new Register();
-            reg.Show();
-            this.Hide();
+            conectar.Open();
+            string seleccionar = "SELECT * FROM login.user WHERE UserN ='" + txtUsername.Text + "'AND Password='" + txtPassword.Text + "';";
+            comando = new MySqlCommand(seleccionar, conectar);
+            mdr = comando.ExecuteReader();
+            if (mdr.Read())
+            {
+                MessageBox.Show("Username not available");
+            }
+            else
+            {
+                string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=login;";
+                string iquery = "INSERT INTO user(`IdUser`,`UserN`, `Password`, `Date`,`LastL`) VALUES (NULL, '" + txtUsername.Text + "', '" + txtPassword.Text + "', '" + dtp.Value + "', '" + dtp.Value + "')";
+
+                MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand(iquery, databaseConnection);
+                commandDatabase.CommandTimeout = 60;
+
+                try
+                {
+                    databaseConnection.Open();
+                    MySqlDataReader myReader = commandDatabase.ExecuteReader();
+                    databaseConnection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("successfully registered");
+
+                frmlogin frm = new frmlogin();
+                frm.Show();
+                this.Hide();
+            }
+
+            conectar.Close();
         }
+           
+        
     }
 }

@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnsalir = new System.Windows.Forms.Button();
+            this.btnlogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnsalir
+            // btnlogout
             // 
-            this.btnsalir.Location = new System.Drawing.Point(164, 122);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(100, 100);
-            this.btnsalir.TabIndex = 0;
-            this.btnsalir.Text = "Cerrar Sesion";
-            this.btnsalir.UseVisualStyleBackColor = true;
+            this.btnlogout.Location = new System.Drawing.Point(164, 122);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(100, 100);
+            this.btnlogout.TabIndex = 0;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
-            // Form2
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(434, 411);
-            this.Controls.Add(this.btnsalir);
-            this.Name = "Form2";
+            this.Controls.Add(this.btnlogout);
+            this.Name = "Inicio";
             this.Text = "Inicio";
             this.ResumeLayout(false);
 
@@ -55,6 +56,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.Button btnlogout;
     }
 }

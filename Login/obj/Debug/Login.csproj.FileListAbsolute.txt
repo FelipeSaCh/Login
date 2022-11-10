@@ -1,0 +1,14 @@
+D:\Escritorio\C#\Login\Login\bin\Debug\Login.exe.config
+D:\Escritorio\C#\Login\Login\bin\Debug\Login.exe
+D:\Escritorio\C#\Login\Login\bin\Debug\Login.pdb
+D:\Escritorio\C#\Login\Login\bin\Debug\MySql.Data.dll
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.csproj.AssemblyReference.cache
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.csproj.SuggestedBindingRedirects.cache
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.frmlogin.resources
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.Inicio.resources
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.Properties.Resources.resources
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.csproj.GenerateResource.cache
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.csproj.CoreCompileInputs.cache
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.csproj.CopyComplete
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.exe
+D:\Escritorio\C#\Login\Login\obj\Debug\Login.pdb

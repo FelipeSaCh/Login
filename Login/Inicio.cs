@@ -16,5 +16,12 @@ namespace Login
         {
             InitializeComponent();
         }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmlogin LoginPrin = new frmlogin();
+            LoginPrin.ShowDialog();
+        }
     }
 }
